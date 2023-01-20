@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "es.adt.business.model.Alumno" table = "alumnos">
+
+        <id name = "id" column = "id">
+            <generator class="increment"/>
+        </id>
+
+        <property name = "codigo" column = "codigo" type = "string" length="10" unique="true"/>
+        <property name = "nombre" column = "nombre" type = "string" length="50"/>
+        <property name = "apellidos" column = "apellidos" type = "string" length="50"/>
+        <property name="telefono" column="telefono" type="string" length="12" not-null="true"/>
+
+    </class>
+
+    <class name = "es.adt.business.model.Asignatura" table = "asignaturas">
+
+        <id name = "id" column = "id">
+            <generator class="increment"/>
+        </id>
+
+        <property name = "codigo" column = "codigo" type = "string" length="5" unique="true" unique-key=""/>
+        <property name = "nombre" column = "nombre" type = "string" length="50"/>
+        <property name = "creditos" column = "creditos" type = "int"/>
+        <property name="optativa" column="optativa" type="boolean"/>
+
+    </class>
+</hibernate-mapping>
